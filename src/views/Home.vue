@@ -2,7 +2,7 @@
   <div class="">
     <div class="text-center">
       <p class="h1 mb-3">🎲</p>
-      <h2 class="mb-5 h1">Bienvenue sur le jeu du pendu pour développeurs</h2>
+      <h2 class="mb-5 h1">Welcome to the hangman Game for Developpers !</h2>
       <p class="lead">
         Le principe est simple : choisissez le mode de jeu ci-dessous. Vous
         aurez alors un ensemble de mots à découvrir, avec à la fin un score basé
