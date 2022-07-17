@@ -1,0 +1,238 @@
+$primary : #13f9c2;
+$dark : #212121;
+// $secondary : #FFF500;
+$success : #6100FF;
+$danger : #FF3C38;
+$warning : #FFE440;
+$white : #ffffff;
+$white-op-80 : rgba($white, .8);
+
+$alert-bg-scale:                -80% !default;
+$alert-border-scale:            -30% !default;
+$alert-color-scale:             30% !default;
+$alert-padding-y:               1.5rem;
+$alert-padding-x:               1.5rem;
+
+$badge-font-size: .85rem;
+$badge-padding-y:                   .45em !default;
+$badge-padding-x:                   .85em !default;
+
+@import "~bootstrap/scss/bootstrap";
+@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,700&display=swap);
+
+html {
+    font-size: 16px;    
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    font-weight: $font-weight-normal;
+    color: $dark;
+}
+
+h3, .h3, h2, .h2, h1, .h1{
+    font-weight: $font-weight-bold;
+}
+
+.list-no-style{
+    list-style: none;
+    padding-left: 0;    
+}
+
+.btn:disabled, .btn.disabled{
+    cursor: not-allowed;
+}
+
+.text-gray{
+    color: $gray-500;
+}
+
+.text-sm{
+    font-size: .85rem;
+}
+
+
+// -----------------------------------
+/* SITE SKELETON */
+// -----------------------------------
+
+#site-parent {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    #site-main{
+        flex-grow: 1;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;        
+    }
+}
+
+#site-header{
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 80px;
+    justify-content: center;
+
+    .brand{
+        text-align: center;
+        font-size: 1.1rem;
+        margin-bottom: 0;
+        font-weight: $font-weight-light;
+
+        a {
+            text-decoration: none;
+            color: $dark;
+        }
+    }
+}
+
+#site-footer{
+    padding: .8rem 0;
+    color: $white;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba($white,.8);
+
+    p{
+        text-align: center;
+    }
+
+    a{
+        color: $dark;
+    }
+}
+
+
+
+// -----------------------------------
+/* GAME */
+// -----------------------------------
+
+#gameSubNav{
+    .nav-link{
+        color: $dark;
+        &:hover{
+            color: $gray-200;
+        }
+    }
+
+    &.nav-pills{
+        .nav-link{          
+            padding: 0.3rem 1.5rem;  
+            border-radius: 5rem;
+            &:hover{
+                color: $warning;
+            }
+            &.active{
+                background-color: $warning;
+                color:$dark;
+
+            }
+        }
+    }
+}
+
+#gameProgressContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    .progress{
+        height: .5rem;
+        border-radius: 0 ;
+        background-color: rgba($dark, .2);
+    }
+}
+
+
+#wordToFind{
+    display: flex;
+    
+    div{
+        margin-right: .5rem;
+        height: 4rem;
+        line-height: 4rem;
+        width: 4rem;
+        text-align: center;
+        border-bottom: 1px solid $gray-500;
+        font-size: 1.5rem;
+
+    }
+}
+
+
+
+#keyboard{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -.05rem;
+    margin-right: -.05rem;   
+
+    div{
+        width: 10%;
+        padding: .05rem;
+
+        .btn{
+            border-radius: 0;
+            width: 100%;
+            padding: .5rem;
+        }        
+    }
+}
+
+#resultWordsList{
+    display: flex;
+    flex-wrap: wrap;
+    li{
+        padding: .2rem .9rem;
+        border: 2px dotted $gray-200;
+        border-radius: 10rem;
+        margin-right: .5rem;
+        margin-bottom: .5rem;
+    }
+}
+
+@include media-breakpoint-up(md){
+    #keyboard{     
+        div{
+            .btn{
+                padding: .3rem .5rem;
+                font-size: 1.2rem;
+            }    
+        }
+    }
+
+}
+
+@include media-breakpoint-up(lg){
+    #keyboardHint{
+        display: block;
+    }    
+}
+
+.ar-card{
+    background-color: $white;
+    box-shadow : 0 .5rem 1.5rem rgba($dark,0.2);
+}
+
+// -----------------------------------
+/* Alerts */
+// -----------------------------------
+.alert {
+    
+    border-width: 0 0 0 1.5rem;
+
+    &.is-transparent{
+        background-color: transparent;
+        border-radius: 0;
+        border-width: 0 0 0 .3rem;
+    }
+
+}

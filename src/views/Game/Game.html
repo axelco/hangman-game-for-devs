@@ -1,0 +1,41 @@
+<div>
+    <ul id="gameSubNav" class="nav nav-pills mb-3 mb-lg-5 justify-content-center">
+        <li class="nav-item">
+            <router-link to="/game/front" class="nav-link">Front-end</router-link>  
+        </li>
+        <li class="nav-item">
+            <router-link to="/game/back" class="nav-link">Back-end</router-link>  
+        </li>
+    </ul>    
+    <CardItem>
+        <ProgressBar :current="setCurrentRoundForFront" :max="setMaxRoundsForFront" />
+        <GameResult v-if="gameOver" :words="wordsToFind" @retry-game-event="startGame" />
+        <div v-else>
+            <div v-if="roundFinished">
+                <RoundResult 
+                    @next-round-event="nextRound"
+                    @end-game-event="getResults"
+                    :word="wordsToFind[currentRound]" 
+                    :maxRounds="maxRounds" 
+                    :currentRound="currentRound" />
+            </div>
+            <div v-else>
+                <h2 class="mb-3 mb-lg-4">Mot {{ setCurrentRoundForFront }} / {{ setMaxRoundsForFront }}</h2>
+                <p >{{ gameSentence }}</p>
+                            
+                <div id="wordToFind" className="mt-3 mb-5">
+                    <div v-for="item in wordsToFind[currentRound].wordIntoArray" >
+                        <span v-if="item.isFound" class="text-uppercase">{{ item.letter }}</span>
+                    </div>
+                 </div>    
+                 <p className="mb-4">Nombre d'essais restants : <strong :class="remainingAttempsClass">{{ remainingAttempts }}</strong></p>
+                 <KeyboardItem 
+                    :letters="keyBoardLetters" 
+                    @letter-clicked-event="handleLetterClicked" 
+                    />
+            </div>
+        </div>
+    </CardItem>
+</div>
+
+
