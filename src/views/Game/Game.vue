@@ -174,12 +174,6 @@ export default {
 
       return css;
     },
-
-    gameSentence(){
-        let sentence = `Les mots à rechercher sont des frameworks et librairies pour le développement `
-        sentence += `${this.gameType}-end`
-        return '💡 '+sentence;
-    }
   },
   methods: {
 

@@ -3,14 +3,14 @@
     <div :class="alertClass">
       <h2 class="h1">{{ title }}</h2>
       <p class="lead">
-        Le mot était
+        The right word was
         <strong class="fw-bold text-uppercase">{{ word.word }}</strong>
       </p>
     </div>
     <button class="btn btn-lg btn-primary" @click="handleClick">
       {{ btnText }}
     </button>
-    <p class="mt-2 text-gray text-sm d-none d-lg-block">⌨ Tapez sur Entrée</p>
+    <p class="mt-2 text-gray text-sm d-none d-lg-block">⌨ Hit Enter to go to next question</p>
   </div>
 </template>
 
@@ -38,12 +38,12 @@ export default {
       return css;
     },
     title() {
-      return this.word.isFound ? `Bravo 🥳` : `Raté 🤒`;
+      return this.word.isFound ? `Nice job 🥳` : `Missed 🤒`;
     },
     btnText() {
       return this.maxRounds === this.currentRound
-        ? `Voir le résultat`
-        : `Mot suivant`;
+        ? `View result`
+        : `Next word`;
     },
   },
   methods: {

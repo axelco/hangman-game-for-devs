@@ -13,7 +13,7 @@
       </div>
     </div>
     <p class="mt-3 text-gray d-none d-lg-block">
-      ⌨ vous pouvez utiliser votre clavier
+      ⌨ You you keyboard to type letters
     </p>
   </div>
 </template>
