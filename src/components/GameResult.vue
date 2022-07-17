@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h2>La partie est finie ⌛</h2>
+    <h2>Game over ⌛</h2>
 
     <div :class="alertClass">
       <p class="display-5 mb-0">
-        Votre score est de <strong class="fw-bold">{{ score }}&nbsp;%</strong>
+        Your score is <strong class="fw-bold">{{ score }}&nbsp;%</strong>
       </p>
     </div>
 
@@ -16,9 +16,9 @@
       </li>
     </ul>
     <button @click="handleRetryClick" class="btn btn-lg btn-primary">
-      Recommencer
+      Try again
     </button>
-    <p class="mt-2 text-gray text-sm d-none d-lg-block">⌨ Tapez sur Entrée</p>
+    <p class="mt-2 text-gray text-sm d-none d-lg-block">⌨ hint Enter to restart</p>
   </div>
 </template>
 

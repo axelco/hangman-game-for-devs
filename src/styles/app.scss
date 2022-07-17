@@ -1,7 +1,7 @@
-$primary : #13f9c2;
+$primary : #6100FF;
 $dark : #212121;
 // $secondary : #FFF500;
-$success : #6100FF;
+$success : #13f9c2;
 $danger : #FF3C38;
 $warning : #FFE440;
 $white : #ffffff;
@@ -92,12 +92,10 @@ h3, .h3, h2, .h2, h1, .h1{
 
 #site-footer{
     padding: .8rem 0;
-    color: $white;
     min-height: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: rgba($white,.8);
 
     p{
         text-align: center;
@@ -118,7 +116,7 @@ h3, .h3, h2, .h2, h1, .h1{
     .nav-link{
         color: $dark;
         &:hover{
-            color: $gray-200;
+            color: $gray-700;
         }
     }
 
@@ -126,12 +124,10 @@ h3, .h3, h2, .h2, h1, .h1{
         .nav-link{          
             padding: 0.3rem 1.5rem;  
             border-radius: 5rem;
-            &:hover{
-                color: $warning;
-            }
+
             &.active{
-                background-color: $warning;
-                color:$dark;
+                background-color: $primary;
+                color:$white;
 
             }
         }
@@ -219,7 +215,7 @@ h3, .h3, h2, .h2, h1, .h1{
 
 .ar-card{
     background-color: $white;
-    box-shadow : 0 .5rem 1.5rem rgba($dark,0.2);
+    box-shadow : 0 .5rem 1rem rgba($dark,0.05);
 }
 
 // -----------------------------------

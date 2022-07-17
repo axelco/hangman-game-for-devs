@@ -20,15 +20,14 @@
                     :currentRound="currentRound" />
             </div>
             <div v-else>
-                <h2 class="mb-3 mb-lg-4">Mot {{ setCurrentRoundForFront }} / {{ setMaxRoundsForFront }}</h2>
-                <p >{{ gameSentence }}</p>
+                <h2 class="mb-3 mb-lg-4">{{gameType}}-end words :  {{ setCurrentRoundForFront }} / {{ setMaxRoundsForFront }}</h2>
                             
                 <div id="wordToFind" className="mt-3 mb-5">
                     <div v-for="item in wordsToFind[currentRound].wordIntoArray" >
                         <span v-if="item.isFound" class="text-uppercase">{{ item.letter }}</span>
                     </div>
                  </div>    
-                 <p className="mb-4">Nombre d'essais restants : <strong :class="remainingAttempsClass">{{ remainingAttempts }}</strong></p>
+                 <p className="mb-4">Remaining attempts : <strong :class="remainingAttempsClass">{{ remainingAttempts }}</strong></p>
                  <KeyboardItem 
                     :letters="keyBoardLetters" 
                     @letter-clicked-event="handleLetterClicked" 
